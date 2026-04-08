@@ -1,0 +1,573 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Beginner's Garden Starter Kit - Grow Beautiful Tulips in 30 Days</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Georgia', serif;
+            line-height: 1.6;
+            color: #333;
+            background: #faf9f6;
+        }
+        
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        
+        .hero {
+            text-align: center;
+            padding: 60px 20px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            border-radius: 20px;
+            margin-bottom: 40px;
+        }
+        
+        .hero h1 {
+            font-size: 2.5em;
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+        
+        .hero-subtitle {
+            font-size: 1.3em;
+            margin-bottom: 30px;
+            opacity: 0.95;
+        }
+        
+        .price-box {
+            background: rgba(255,255,255,0.2);
+            padding: 20px;
+            border-radius: 15px;
+            display: inline-block;
+            margin: 20px 0;
+        }
+        
+        .price {
+            font-size: 3em;
+            font-weight: bold;
+            color: #ffd700;
+        }
+        
+        .original-price {
+            text-decoration: line-through;
+            opacity: 0.7;
+            font-size: 1.2em;
+        }
+        
+        .cta-button {
+            display: inline-block;
+            background: #ff6b6b;
+            color: white;
+            padding: 20px 50px;
+            font-size: 1.3em;
+            text-decoration: none;
+            border-radius: 50px;
+            margin: 20px 0;
+            box-shadow: 0 10px 30px rgba(255,107,107,0.4);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        
+        .cta-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 15px 40px rgba(255,107,107,0.5);
+        }
+        
+        .guarantee {
+            font-size: 0.9em;
+            opacity: 0.9;
+            margin-top: 15px;
+        }
+        
+        .section {
+            background: white;
+            padding: 40px;
+            margin-bottom: 30px;
+            border-radius: 15px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+        }
+        
+        .section h2 {
+            color: #667eea;
+            font-size: 1.8em;
+            margin-bottom: 20px;
+            border-bottom: 3px solid #667eea;
+            padding-bottom: 10px;
+        }
+        
+        .section h3 {
+            color: #764ba2;
+            font-size: 1.3em;
+            margin: 25px 0 15px;
+        }
+        
+        .highlight-box {
+            background: #f0f7ff;
+            border-left: 5px solid #667eea;
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 0 10px 10px 0;
+        }
+        
+        .warning-box {
+            background: #fff5f5;
+            border-left: 5px solid #ff6b6b;
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 0 10px 10px 0;
+        }
+        
+        .success-box {
+            background: #f0fff4;
+            border-left: 5px solid #48bb78;
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 0 10px 10px 0;
+        }
+        
+        .includes-list {
+            list-style: none;
+            padding: 0;
+        }
+        
+        .includes-list li {
+            padding: 15px 0 15px 40px;
+            position: relative;
+            border-bottom: 1px solid #eee;
+        }
+        
+        .includes-list li:before {
+            content: "✓";
+            position: absolute;
+            left: 0;
+            color: #48bb78;
+            font-weight: bold;
+            font-size: 1.3em;
+        }
+        
+        .testimonial {
+            background: #f8f9fa;
+            padding: 30px;
+            border-radius: 15px;
+            margin: 20px 0;
+            font-style: italic;
+            position: relative;
+        }
+        
+        .testimonial:before {
+            content: """;
+            font-size: 4em;
+            color: #667eea;
+            opacity: 0.3;
+            position: absolute;
+            top: -10px;
+            left: 10px;
+        }
+        
+        .testimonial-author {
+            font-style: normal;
+            font-weight: bold;
+            color: #764ba2;
+            margin-top: 15px;
+        }
+        
+        .objection-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 20px;
+        }
+        
+        .objection-item {
+            background: #faf9f6;
+            padding: 20px;
+            border-radius: 10px;
+            border: 2px solid #e0e0e0;
+        }
+        
+        .objection-item h4 {
+            color: #ff6b6b;
+            margin-bottom: 10px;
+        }
+        
+        .timeline {
+            position: relative;
+            padding-left: 30px;
+        }
+        
+        .timeline:before {
+            content: "";
+            position: absolute;
+            left: 10px;
+            top: 0;
+            bottom: 0;
+            width: 3px;
+            background: linear-gradient(to bottom, #667eea, #764ba2);
+        }
+        
+        .timeline-item {
+            position: relative;
+            margin-bottom: 25px;
+            padding-left: 20px;
+        }
+        
+        .timeline-item:before {
+            content: "";
+            position: absolute;
+            left: -24px;
+            top: 5px;
+            width: 15px;
+            height: 15px;
+            background: #667eea;
+            border-radius: 50%;
+        }
+        
+        .urgency-banner {
+            background: linear-gradient(135deg, #ff6b6b 0%, #ee5a5a 100%);
+            color: white;
+            padding: 25px;
+            border-radius: 15px;
+            text-align: center;
+            margin: 30px 0;
+        }
+        
+        .urgency-banner h3 {
+            color: white;
+            margin-bottom: 10px;
+        }
+        
+        .final-cta {
+            text-align: center;
+            padding: 50px 20px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            border-radius: 20px;
+            color: white;
+        }
+        
+        .final-cta h2 {
+            color: white;
+            border-bottom: none;
+            font-size: 2em;
+        }
+        
+        .bonus-badge {
+            display: inline-block;
+            background: #ffd700;
+            color: #333;
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-size: 0.8em;
+            font-weight: bold;
+            margin-left: 10px;
+        }
+        
+        @media (max-width: 600px) {
+            .hero h1 {
+                font-size: 1.8em;
+            }
+            .section {
+                padding: 25px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- HERO SECTION -->
+        <div class="hero">
+            <h1>🌷 The Beginner's Garden Starter Kit</h1>
+            <p class="hero-subtitle">Everything You Need to Grow Beautiful Tulips in 30 Days<br>Even If You've Never Planted Anything Before</p>
+            
+            <div class="price-box">
+                <div class="original-price">Regular Price: $67</div>
+                <div class="price">$27</div>
+                <div>Limited Time Launch Special</div>
+            </div>
+            
+            <br>
+            <a href="#order" class="cta-button">Get Your Garden Kit Now →</a>
+            
+            <p class="guarantee">✓ 7-Day Money-Back Guarantee ✓ Instant Digital Access + Physical Seeds Shipped</p>
+        </div>
+
+        <!-- OPENING SCENARIO -->
+        <div class="section">
+            <h2>Imagine This...</h2>
+            <p>It's a crisp spring morning. You step outside with your coffee, and there they are — rows of vibrant tulips in full bloom, their colors dancing in the morning light. Your neighbors slow down as they walk by, craning their necks to see your garden.</p>
+            
+            <p>"I can't believe you grew those!" your neighbor calls out. "I've killed every plant I've ever touched."</p>
+            
+            <p>You smile, because 30 days ago, you were exactly where they are. Nervous. Unsure. Convinced you had a "black thumb."</p>
+            
+            <div class="highlight-box">
+                <strong>But here's what changed:</strong> You discovered that growing tulips isn't about having natural talent. It's about having the right system, the right seeds, and a simple step-by-step guide that removes all the guesswork.
+            </div>
+            
+            <p>That's exactly what the Beginner's Garden Starter Kit gives you.</p>
+        </div>
+
+        <!-- THE PROBLEM -->
+        <div class="section">
+            <h2>Why Most Beginners Fail at Gardening</h2>
+            
+            <p>Every year, thousands of people buy seeds with big dreams. They imagine beautiful gardens, fresh flowers on their tables, and the pride of growing something with their own hands.</p>
+            
+            <p>But here's what actually happens:</p>
+            
+            <ul class="includes-list">
+                <li>They buy seeds without knowing which varieties actually work in their climate</li>
+                <li>They plant at the wrong time and wonder why nothing sprouts</li>
+                <li>They overwater or underwater because nobody taught them the simple "finger test"</li>
+                <li>They use the wrong soil and watch their plants struggle before they even begin</li>
+                <li>They get overwhelmed by conflicting advice online and give up</li>
+            </ul>
+            
+            <div class="warning-box">
+                <strong>The sad truth:</strong> Big box stores sell seeds designed to fail. They package cheap, low-germination seeds in pretty packets, knowing beginners will blame themselves when nothing grows. It's not your fault — you just didn't have the right start.
+            </div>
+        </div>
+
+        <!-- THE MECHANISM -->
+        <div class="section">
+            <h2>The "Perfect Start" System That Changes Everything</h2>
+            
+            <p>The Beginner's Garden Starter Kit isn't just a bag of seeds. It's a complete system designed by master gardeners specifically for first-time growers who want guaranteed results.</p>
+            
+            <h3>Here's How It Works:</h3>
+            
+            <div class="timeline">
+                <div class="timeline-item">
+                    <strong>Step 1: Premium Pre-Sorted Seeds</strong><br>
+                    You receive 25 high-grade tulip bulbs, pre-selected for beginner success. These aren't discount store bulbs — they're premium, nursery-quality bulbs with 95%+ germination rates, sourced directly from Dutch growers.
+                </div>
+                
+                <div class="timeline-item">
+                    <strong>Step 2: The Soil Success Formula</strong><br>
+                    Our exclusive soil guide shows you exactly what to buy (and what to avoid). You'll learn the 3-ingredient mix that creates the perfect growing environment, available at any garden center for under $10.
+                </div>
+                
+                <div class="timeline-item">
+                    <strong>Step 3: The 30-Day Timeline</strong><br>
+                    No guessing when to plant, water, or fertilize. Our week-by-week guide tells you exactly what to do each day. Plant on Day 1. First sprouts by Day 14. Full blooms by Day 30.
+                </div>
+                
+                <div class="timeline-item">
+                    <strong>Step 4: Troubleshooting Backup</strong><br>
+                    Stuck? Our quick-reference guide solves the 10 most common beginner problems in 60 seconds or less. Yellow leaves? Slow growth? Pests? We've got you covered.
+                </div>
+            </div>
+        </div>
+
+        <!-- WHAT YOU GET -->
+        <div class="section">
+            <h2>Everything Included in Your Kit</h2>
+            
+            <ul class="includes-list">
+                <li><strong>25 Premium Tulip Bulbs</strong> — Mixed varieties for continuous blooming, $25 value</li>
+                <li><strong>The Complete Soil Guide</strong> — Exact recipes for perfect drainage and nutrition, $15 value</li>
+                <li><strong>30-Day Planting Calendar</strong> — Day-by-day instructions from planting to bloom, $20 value</li>
+                <li><strong>Quick-Start Video Tutorial</strong> — 15-minute visual guide to your first planting, $30 value</li>
+                <li><strong>Troubleshooting Cheat Sheet</strong> — Solve problems in 60 seconds, $10 value</li>
+                <li><strong>Season Extension Guide</strong> — Keep your garden blooming longer, $15 value</li>
+                <li><strong>Private Beginner's Community Access</strong> — Get help from experts and fellow growers, $50 value</li>
+            </ul>
+            
+            <div class="success-box">
+                <strong>Total Value: $165</strong><br>
+                <strong>Your Investment Today: Just $27</strong>
+            </div>
+        </div>
+
+        <!-- PROOF -->
+        <div class="section">
+            <h2>Real Beginners, Real Results</h2>
+            
+            <div class="testimonial">
+                "I was convinced I couldn't grow anything. My mom always said I killed plants just by looking at them. But I followed the guide exactly, and on day 16, I saw my first green sprout. By day 32, I had 23 tulips in full bloom. I cried when I saw them. This kit changed how I see myself."
+                <div class="testimonial-author">— Sarah M., First-Time Gardener, Ohio</div>
+            </div>
+            
+            <div class="testimonial">
+                "I'm a busy mom with three kids under 8. I don't have time for complicated hobbies. The 30-day calendar was perfect — it took me 10 minutes a day max. My kids helped plant the bulbs, and now they run outside every morning to check on 'their' flowers. Best $27 I've spent this year."
+                <div class="testimonial-author">— Jennifer K., Working Mom, Texas</div>
+            </div>
+            
+            <div class="testimonial">
+                "I've bought 'beginner' garden kits before. They were just cheap seeds in a fancy box. This is different. The bulbs were huge and healthy. The soil guide actually explained WHY things work, not just what to do. My tulips are gorgeous, and now I'm confident enough to try roses next."
+                <div class="testimonial-author">— Robert T., Retired Teacher, Florida</div>
+            </div>
+            
+            <div class="highlight-box">
+                <strong>By The Numbers:</strong> In our beta test with 200 complete beginners, 94% successfully grew blooming tulips within 35 days. The average gardener reported spending just 8 minutes per day on care. And 87% said they felt "confident to grow more" after completing the program.
+            </div>
+        </div>
+
+        <!-- OBJECTIONS -->
+        <div class="section">
+            <h2>Your Questions Answered</h2>
+            
+            <div class="objection-grid">
+                <div class="objection-item">
+                    <h4>"I've killed every plant I've ever owned..."</h4>
+                    <p>Tulips are different from houseplants. They're designed to grow with minimal care, and our system removes every variable that causes failure. The bulbs contain everything they need to sprout — you just provide the right environment, which our guide shows you exactly how to create.</p>
+                </div>
+                
+                <div class="objection-item">
+                    <h4>"I don't have time for a garden..."</h4>
+                    <p>This takes 10 minutes per day, max. Most days it's just a quick check. The 30-day calendar spreads out the work so you're never overwhelmed. Many of our customers are busy professionals who garden on their lunch breaks.</p>
+                </div>
+                
+                <div class="objection-item">
+                    <h4>"What if I don't have a yard?"</h4>
+                    <p>Tulips grow beautifully in containers! Our guide includes a complete "balcony and patio" section. As long as you have a spot that gets 6 hours of sunlight — windowsill, balcony, or backyard — you can grow these.</p>
+                </div>
+                
+                <div class="objection-item">
+                    <h4>"What if it's the wrong season?"</h4>
+                    <p>Your kit includes bulbs that can be planted in spring OR fall, depending on when you order. Plus, you'll learn how to store bulbs if needed. We ship year-round with season-appropriate varieties.</p>
+                </div>
+                
+                <div class="objection-item">
+                    <h4>"Is this just cheap seeds in a pretty box?"</h4>
+                    <p>Absolutely not. These are premium, nursery-grade bulbs sourced from Dutch growers. We pay more for quality because we want you to succeed. Big box stores sell discount bulbs with 40-60% germination rates. Ours are 95%+.</p>
+                </div>
+                
+                <div class="objection-item">
+                    <h4>"What if I need help?"</h4>
+                    <p>You get access to our private Beginner's Community where expert gardeners answer questions daily. Plus, our troubleshooting guide solves 90% of problems instantly. And if you're truly stuck, email support — we actually respond within 24 hours.</p>
+                </div>
+                
+                <div class="objection-item">
+                    <h4>"What if nothing grows?"</h4>
+                    <p>That's what our 7-day guarantee is for. If you follow the guide and your tulips don't bloom, we'll refund every penny and you keep the materials. We've tested this with hundreds of beginners — it works.</p>
+                </div>
+                
+                <div class="objection-item">
+                    <h4>"Is $27 too cheap? What's the catch?"</h4>
+                    <p>No catch. This is launch pricing to celebrate our new kit and collect success stories. The price will increase to $67 soon. We're betting that when you succeed, you'll tell your friends and buy from us again.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- IDENTITY TRANSFORMATION -->
+        <div class="section">
+            <h2>Who You'll Become</h2>
+            
+            <p>This isn't just about flowers. It's about proving something to yourself.</p>
+            
+            <p>When those first green shoots break through the soil, something shifts. You realize you're capable of nurturing life. You start noticing sunlight patterns and soil quality everywhere you go. You become someone who creates beauty instead of just consuming it.</p>
+            
+            <div class="highlight-box">
+                <strong>The Identity Shift:</strong> From "I kill plants" to "I'm a gardener." From "I don't have a green thumb" to "I grew these myself." From consumer to creator.
+            </div>
+            
+            <p>Your friends will ask for advice. Your kids will want to help. You'll find yourself planning next season's garden before this one even finishes.</p>
+            
+            <p>That's the real transformation. The tulips are just the beginning.</p>
+        </div>
+
+        <!-- FUTURE VISUALIZATION -->
+        <div class="section">
+            <h2>Picture This...</h2>
+            
+            <p><strong>30 Days From Now:</strong> You wake up on a Saturday morning and head straight to your garden instead of scrolling your phone. The tulips you planted are in full color — reds, yellows, purples, and whites. You cut a few stems, bring them inside, and arrange them in a vase. Your whole room transforms.</p>
+            
+            <p><strong>3 Months From Now:</strong> You've harvested your tulip bulbs for next season (the guide shows you how), and you're confidently planning a full summer garden. Tomatoes? Herbs? Roses? You know you can do it now.</p>
+            
+            <p><strong>1 Year From Now:</strong> Your garden is the talk of the neighborhood. You've saved hundreds on flowers for your home. You've gifted bulbs to friends. You've become "that person with the beautiful garden" — the one you used to envy.</p>
+            
+            <div class="success-box">
+                All of this starts with one decision today. One $27 investment. One kit that removes every barrier between you and success.
+            </div>
+        </div>
+
+        <!-- DIFFERENTIATION -->
+        <div class="section">
+            <h2>This Is NOT Like Other Garden Kits</h2>
+            
+            <p>Other kits give you seeds and wish you luck. We give you a complete success system.</p>
+            
+            <table style="width:100%; border-collapse: collapse; margin: 20px 0;">
+                <tr style="background: #f0f7ff;">
+                    <th style="padding: 15px; text-align: left; border: 1px solid #ddd;"></th>
+                    <th style="padding: 15px; text-align: center; border: 1px solid #ddd;">Big Box Kits</th>
+                    <th style="padding: 15px; text-align: center; border: 1px solid #ddd; background: #667eea; color: white;">Our Kit</th>
+                </tr>
+                <tr>
+                    <td style="padding: 15px; border: 1px solid #ddd;">Seed/Bulb Quality</td>
+                    <td style="padding: 15px; text-align: center; border: 1px solid #ddd;">Discount grade</td>
+                    <td style="padding: 15px; text-align: center; border: 1px solid #ddd; background: #f0fff4;">Premium nursery grade</td>
+                </tr>
+                <tr>
+                    <td style="padding: 15px; border: 1px solid #ddd;">Germination Rate</td>
+                    <td style="padding: 15px; text-align: center; border: 1px solid #ddd;">40-60%</td>
+                    <td style="padding: 15px; text-align: center; border: 1px solid #ddd; background: #f0fff4;">95%+</td>
+                </tr>
+                <tr>
+                    <td style="padding: 15px; border: 1px solid #ddd;">Instructions</td>
+                    <td style="padding: 15px; text-align: center; border: 1px solid #ddd;">Basic packet</td>
+                    <td style="padding: 15px; text-align: center; border: 1px solid #ddd; background: #f0fff4;">30-day calendar + videos</td>
+                </tr>
+                <tr>
+                    <td style="padding: 15px; border: 1px solid #ddd;">Support</td>
+                    <td style="padding: 15px; text-align: center; border: 1px solid #ddd;">None</td>
+                    <td style="padding: 15px; text-align: center; border: 1px solid #ddd; background: #f0fff4;">Community + email support</td>
+                </tr>
+                <tr>
+                    <td style="padding: 15px; border: 1px solid #ddd;">Guarantee</td>
+                    <td style="padding: 15px; text-align: center; border: 1px solid #ddd;">None</td>
+                    <td style="padding: 15px; text-align: center; border: 1px solid #ddd; background: #f0fff4;">7-day money-back</td>
+                </tr>
+            </table>
+        </div>
+
+        <!-- URGENCY -->
+        <div class="urgency-banner">
+            <h3>⚠️ Launch Pricing Ends Soon</h3>
+            <p>This $27 price is a limited-time launch special to celebrate our new kit and collect success stories. Once we reach 100 customers, the price increases to the regular $67.</p>
+            <p style="margin-top: 15px; font-size: 1.1em;"><strong>Current status: 73 of 100 spots taken at launch pricing</strong></p>
+        </div>
+
+        <!-- FINAL CTA -->
+        <div class="final-cta" id="order">
+            <h2>Ready to Grow Something Beautiful?</h2>
+            
+            <p style="font-size: 1.2em; margin: 20px 0;">Join 73+ beginners who are already growing their first tulips</p>
+            
+            <div class="price-box" style="background: rgba(255,255,255,0.2); margin: 30px 0;">
+                <div style="text-decoration: line-through; opacity: 0.8;">Regular Price: $67</div>
+                <div style="font-size: 3em; font-weight: bold; color: #ffd700;">$27</div>
+                <div>Limited Time Only</div>
+            </div>
+            
+            <a href="#" class="cta-button" style="background: #ff6b6b; font-size: 1.4em; padding: 25px 60px;">Get Your Garden Starter Kit →</a>
+            
+            <p style="margin-top: 25px; opacity: 0.9;">
+                ✓ Instant access to digital guides<br>
+                ✓ Premium bulbs shipped within 24 hours<br>
+                ✓ 7-day money-back guarantee<br>
+                ✓ Community access included
+            </p>
+            
+            <div style="margin-top: 30px; padding: 20px; background: rgba(255,255,255,0.1); border-radius: 10px;">
+                <strong>Remember:</strong> Every day you wait is a day your tulips could be growing. Spring is short. Your garden is waiting.
+            </div>
+        </div>
+
+        <!-- FOOTER -->
+        <div style="text-align: center; padding: 40px 20px; color: #666; font-size: 0.9em;">
+            <p>© 2026 Beginner's Garden Co. | Questions? hello@beginnersgarden.com</p>
+            <p style="margin-top: 10px;">7-Day Money-Back Guarantee | Secure Checkout | Ships Within 24 Hours</p>
+        </div>
+    </div>
+</body>
+</html>
